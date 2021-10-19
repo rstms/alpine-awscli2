@@ -36,6 +36,10 @@ build:
 build-shell: build
 	$(DOCKER_RUN) $(MOUNT_DIST) --entrypoint=/bin/sh $(TAG)-build:latest -l
 
+devpi:
+	$(DOCKER_RUN) $(MOUNT_DIST) --expose 3141 $(TAG)-build:latest devpi
+
+
 runtime:
 	$(DOCKER_BUILD) --tag $(TAG)-runtime $(BUILD_ARGS) $@
 

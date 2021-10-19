@@ -35,5 +35,7 @@ RUN make build
 RUN make install
 RUN make pip-purge
 
+EXPOSE 3141
+
 ENTRYPOINT ["/bin/entrypoint" ]
 CMD [ "--version" ]

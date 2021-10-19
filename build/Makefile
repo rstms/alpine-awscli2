@@ -38,7 +38,9 @@ build:
 	$(foreach BUILD,$(BUILDS),mkdir -p dist/$(BUILD);)
 	$(VENV) $(foreach BUILD,$(BUILDS),pip wheel -w dist/$(BUILD) -r requirements-$(BUILD).txt;)
 	$(VENV) pip wheel -w dist --no-cache-dir $(WHEEL_DIRS) .
+	$(VENV) pip install devpi-server devpi
 	$(call PKG_DEL,BUILD)
+	$(VENV) devpi-init
 
 install:
 	$(VENV) pip install --no-cache-dir $(WHEEL_DIRS) dist/*.whl
