@@ -1,0 +1,8 @@
+#!/bin/sh
+USER=$1
+addgroup ${USER}
+adduser -G ${USER} -D ${USER}
+addgroup ${USER} wheel
+echo "%wheel ALL=(ALL) NOPASSWD: ALL" >/etc/sudoers.d/wheel-group
+mkdir -p /home/${USER}/.local/bin
+chown -R ${USER}.${USER} /home/${USER}
