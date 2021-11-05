@@ -53,25 +53,25 @@ publish | tag with alpine and awscli versions and push to dockerhub
 
 
 ## Detailed Description:
-The installation installs prerequisite software, configures the system to build the
+The `build/Dockerfile` installs prerequisite software, configures the system to build the
 compiled modules, clones the the AWS github repo aws/aws-cli, selects the `v2` branch,
-then compiles the distribution files with `pip wheel`
+then prepares a distribution package using `pip wheel`
 
-This results in a set of wheel files which are the result of the compilation, which
-can subsequently be installed to an alpine system with pip.
+This results in a set of the wheel files required for awscli which can be installed to an
+alpine system with pip or any compatible alternative.
 
-The container build continues based on the pypiserver/pypiserver dockerhub image,
+The container build then continues from the pypiserver/pypiserver dockerhub image,
 which can be run as a local PyPi-compatible module repository.
 
 The resulting image contains the wheel files for all modules required for
-awscli int the directory `/data/packages`.  The wheel files may be extracted
+awscli in the directory `/data/packages`.  The wheel files may be extracted
 as a tarball, copied to a directory, or the build image may be run as a repo
 and used with the command:
 ```
 pip install -i http://locahost:8080 awscli
 ```
 
-See the examples for various methods of installation. 
+See the examples for various alternative installation methods.
 
 *Use the source, Luke.*
 
