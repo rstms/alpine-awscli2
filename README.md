@@ -97,9 +97,9 @@ Their suggested installation is documented here:
 
 While this method works on the list of supported environments, it fails on Alpine
 Linux due to limitations of the non-standard installation mechanism.  One problem
-involves glibc dependency, but this isn't actually a requirement for the awscli
-module or any of its dependencies despite what you might have read.  With proper
-system configuration, unmodified AWS source builds and installs without issue using
+involves glibc dependency, but this isn't a requirement for the awscli module or
+for any of its dependencies despite what many have written.  With proper system
+configuration, unmodified AWS sources build and install without issue using
 just the standard Python tools on Alpine.
 
 The dockerhub image provides a minimal configuration single command installation.
