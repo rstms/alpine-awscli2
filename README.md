@@ -16,9 +16,12 @@ A pythonic method for installing awscli v2 on alpine.
 
 ## Installation Requirements
 On Alpine Linux, in a container, VM, bare metal, one needs:
-- python3 `apk add python3`
-- pip `apk add py3-pip`
-- docker (see https://wiki.alpinelinux.org/wiki/Docker)
+Resource     | Reference
+------------ | --------------
+alpine       | https://www.alpinelinux.org
+python3      | `apk add python3 py3-pip`
+docker       | https://wiki.alpinelinux.org/wiki/Docker#Installation
+make         | `apk add make` (development only; not needed to install from dockerhub)
 
 ## Quick Start: `pip`
 Install awscli on an alpine system with docker
@@ -31,17 +34,8 @@ Install awscli using `pipx`
 eval $(docker run rstms/alpine-awscli:latest pipx)
 ```
 
-## Dev System Requirements:
-These are required for building the install image.  To install, only
-docker is required.
-
-Resource     | Reference
------------- | --------------
-alpine       | https://www.alpinelinux.org
-docker       | https://wiki.alpinelinux.org/wiki/Docker#Installation
-make         | `apk add make`
-
 ## Development
+To fork your own, you'll need github and dockerhub accounts.
 ```
 git clone git@github.com:rstms/alpine-awscli2
 cd alpine-awscli2
@@ -60,7 +54,7 @@ publish | tag with alpine and awscli versions and push to dockerhub
 
 ## Detailed Description:
 The installation installs prerequisite software, configures the system to build the
-compiled modules, clones the the AWS github repo aws/aws_cli, selects the `v2` branch,
+compiled modules, clones the the AWS github repo aws/aws-cli, selects the `v2` branch,
 then compiles the distribution files with `pip wheel`
 
 This results in a set of wheel files which are the result of the compilation, which
