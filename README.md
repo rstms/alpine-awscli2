@@ -12,6 +12,12 @@ A pythonic method for installing awscli v2 on alpine.
 - No root requirement
 - Installs into venv
 
+## Installation Requirements
+On Alpine Linux, in a container, VM, bare metal, one needs:
+- python3 `apk add python3`
+- pip `apk add py3-pip`
+- docker (see https://wiki.alpinelinux.org/wiki/Docker)
+
 ## Quick Start: `pip`
 Install awscli on an alpine system with docker
 ```
@@ -45,7 +51,7 @@ Target  | Description
 ------- | -----------
 build   | build a docker image, pull module source from github; build wheel files
 wheels  | copy the wheels from the image to local `wheels` directory
-tarball | create `awscli-wheels.tgz` gzipped tar archive containing the wheels in a package directory
+tarball | create `awscli-wheels.tgz` containing the wheels in a `package` directory
 test    | run the tests (examples)
 publish | tag with alpine and awscli versions and push to dockerhub 
 
