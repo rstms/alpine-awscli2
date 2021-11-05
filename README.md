@@ -108,8 +108,7 @@ unmodified clones of a project's packages when the owner has chosen not to publi
 on PyPi.  Otherwise we could all just use PyPi and pip.
 
 This situation has resulted in a fair amount of discussion:
- - https://github.com/aws/aws-cli/issues/4947
-Note how this thead ends.
+ - https://github.com/aws/aws-cli/issues/4947 (Note how this thead ends)
 
 *This project is a humble attempt to solve a problem for one developer,
 released in the hope that it may be of use to others.*
