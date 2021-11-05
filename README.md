@@ -7,7 +7,7 @@ A pythonic method for installing awscli v2 on alpine.
 - Simple `Dockerfile` with standard git clone, python deployment commands
 - Uses [dockerhub container](https://hub.docker.com/repository/docker/rstms/alpine-awscli) to minimize dev system config requirements
 - Reads current release version from [official dockerhub aws-cli image](https://hub.docker.com/r/amazon/aws-cli)
-- Installs aws-cli source from AWS github repo with no code modification
+- Clones aws-cli source from [AWS github repo](https://github.com/aws/aws-cli) with no code modification
 - Builds using [official dockerhub alpine image](https://hub.docker.com/_/alpine)
 - Optional: includes https://github.com/pypiserver/pypiserver to run as local repo
 - Offers multiple methods for installing awscli on alpine containers
