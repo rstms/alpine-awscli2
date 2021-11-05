@@ -96,14 +96,20 @@ Their suggested installation is documented here:
  - https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
 
 While this method works on the list of supported environments, it fails on Alpine
-Linux due to limitations of the non-standard installation mechanism.  With the
-proper configuration, the AWS sources build without any issue on Alpine.
+Linux due to limitations of the non-standard installation mechanism.  One problem
+involves glibc dependency, but this isn't actually a requirement for the awscli
+module or any of its dependencies despite what you might have read.  With proper
+system configuration, unmodified AWS source builds and installs without issue using
+just the standard Python tools on Alpine.
 
-One problem relates to glibc dependency, which isn't actually a requirement for
-the awscli module or the dependencies despite what you might have read.
+The dockerhub image provides a minimal configuration single command installation.
+This workaround respects the PyPi license terms, which disallow distribution of
+unmodified clones of a projects when the owner has chosen not to publish a PyPi
+package.  Otherwise we could all just use PyPi and pip.
 
-This situation has invited some small amount of discussion:
- - https://github.com/aws/aws-cli/issues/4947
+This situation has resulted in a fair amount of discussion:
+> https://github.com/aws/aws-cli/issues/4947
+Note how this thead ends.
 
 *This project is a humble attempt to solve a problem for one developer,
 released in the hope that it may be of use to others.*
