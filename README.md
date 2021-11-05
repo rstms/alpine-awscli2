@@ -44,18 +44,30 @@ make build && make test && make publish
 Target  | Description
 ------- | -----------
 build   | build a docker image, pull module source from github; build wheel files
-wheels  | start the image and copy the wheel to the local filesystem
-tarball | create a gzipped tar archive containing the wheels in a package directory
-test    | run the tests
-publish | tag with alpine and awscli versions and push the image to dockerhub 
+wheels  | copy the wheels from the image to local `wheels` directory
+tarball | create `awscli-wheels.tgz` gzipped tar archive containing the wheels in a package directory
+test    | run the tests (examples)
+publish | tag with alpine and awscli versions and push to dockerhub 
 
 
-## Detailed Descripton:
-The installation performs all necessary configuration while building
-a docker image.  The image contains compiled wheel files for all dependency
-modules in the directory /data/packages.  The wheel files may be extracted
-as a tarball, a directory, or the build image may be run as a
-pypi-compatible repo 
+## Detailed Description:
+The installation installs prerequisite software, configures the system to build the
+compiled modules, clones the the AWS github repo aws/aws_cli, selects the `v2` branch,
+then compiles the distribution files with `pip wheel`
+
+This results in a set of wheel files which are the result of the compilation, which
+can subsequently be installed to an alpine system with pip.
+
+The container build continues based on the pypiserver/pypiserver dockerhub image,
+which can be run as a local PyPi-compatible module repository.
+
+The resulting image contains the wheel files for all modules required for
+awscli int the directory `/data/packages`.  The wheel files may be extracted
+as a tarball, copied to a directory, or the build image may be run as a repo
+and used with the command:
+```
+pip install -i http://locahost:8080 awscli
+```
 
 See the examples for various methods of installation. 
 
@@ -65,9 +77,9 @@ See the examples for various methods of installation.
 ### Why does this project exist? 
 
 While the `awscli` package on PyPi `just works` for python2 users, those
-who wish to use a python version less than a decade out of date, or need
-access to the newest AWS features will soon discover that version 2 is not
-available using the standard `pip install`
+who wish to use current python versions or require the expanded V2 features
+discover that version 2 is not available using the expected idiom:
+`pip install awscli>=2.0.0`
 
 AWS has chosen not to distribute aws-cli V2.X.X and its botocore dependency on PyPi.
 
