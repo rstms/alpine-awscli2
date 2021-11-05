@@ -1,0 +1,8 @@
+#!/bin/bash
+HOST=${HOST:-localhost}
+PORT=${PORT:-8080}
+cat - <<-EOF
+ID=\$(docker run --detach --publish ${PORT}:8080 --rm rstms/alpine-awscli:latest);
+pipx install --pip-args '--trusted-host=${HOST} -i http://${HOST}:8080' awscli;
+docker rm -f \$ID;
+EOF

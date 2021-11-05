@@ -1,6 +1,2 @@
 #!/bin/sh
-. ~/.venv/bin/activate
-case $1 in
-  devpi) devpi-server ;;
-  *) exec aws "$@" ;;
-esac
+exec /bin/sh /entrypoint.sh "$@"
