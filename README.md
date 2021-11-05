@@ -1,5 +1,5 @@
-alpine-awscli
--------------
+alpine-awscli2
+--------------
 
 A pythonic method for installing awscli v2 on alpine.
 
