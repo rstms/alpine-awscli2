@@ -23,13 +23,20 @@ python3      | `apk add python3 py3-pip`
 docker       | https://wiki.alpinelinux.org/wiki/Docker#Installation
 make         | `apk add make` (development only; not needed to install from dockerhub)
 
-## Quick Start: `pip`
-Install awscli on an alpine system with docker
+## Quick Start (fast and convenient)
+
+ > Security Note: While this doesn't use `sudo`, it's still rather too trusting.
+ > It's never a good idea to run unknown commands with `eval` or by piping `curl` 
+ > results into `sudo` or `bash`.
+ > To output the commands being passed to `eval`, just run the command inside the parenthesis.
+ > You can also capture this output to a file to make your own shell script.
+
+Install awscli using `docker` and `pip`:
 ```
 eval $(docker run rstms/alpine-awscli:latest install)
 ```
 
-Install awscli using `pipx`
+Install awscli using `docker` and `pipx`:
 ```
 eval $(docker run rstms/alpine-awscli:latest pipx)
 ```
