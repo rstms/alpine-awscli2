@@ -87,8 +87,8 @@ See the examples for various alternative installation methods.
 
 While the `awscli` package on PyPi *just works* for python2 users, those
 who wish to use current python versions or require the expanded V2 features
-discover that version 2 is not available using the expected idiom:
-`pip install awscli>=2.0.0`
+may discover to their dismay that version 2 is not available using the expected
+ idiom: `pip install awscli==2.X.X`
 
 AWS has chosen not to distribute aws-cli V2.X.X and its botocore dependency on PyPi.
 
