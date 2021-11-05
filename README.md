@@ -104,11 +104,11 @@ just the standard Python tools on Alpine.
 
 The dockerhub image provides a minimal configuration single command installation.
 This workaround respects the PyPi license terms, which disallow distribution of
-unmodified clones of a projects when the owner has chosen not to publish a PyPi
-package.  Otherwise we could all just use PyPi and pip.
+unmodified clones of a project's packages when the owner has chosen not to publish
+on PyPi.  Otherwise we could all just use PyPi and pip.
 
 This situation has resulted in a fair amount of discussion:
-> https://github.com/aws/aws-cli/issues/4947
+ - https://github.com/aws/aws-cli/issues/4947
 Note how this thead ends.
 
 *This project is a humble attempt to solve a problem for one developer,
