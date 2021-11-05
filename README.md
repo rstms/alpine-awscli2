@@ -85,7 +85,7 @@ See the examples for various alternative installation methods.
 
 ### Why does this project exist? 
 
-While the `awscli` package on PyPi `just works` for python2 users, those
+While the `awscli` package on PyPi *just works* for python2 users, those
 who wish to use current python versions or require the expanded V2 features
 discover that version 2 is not available using the expected idiom:
 `pip install awscli>=2.0.0`
