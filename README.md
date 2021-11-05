@@ -4,13 +4,15 @@ alpine-awscli
 A pythonic method for installing awscli v2 on alpine.
 
 ## Features:
-- Uses docker containers to minimize dev system config requirements
-- Reads current release version from dockerhub `official` aws-cli image
-- Installs awscli source from AWS github repo without code modification
-- Builds in dockerhub `official` alpine image
+- Simple `Dockerfile` with standard git clone, python deployment commands
+- Uses docker container to minimize dev system config requirements
+- Reads current release version from `official` dockerhub aws-cli image
+- Installs aws-cli source from AWS github repo with no code modification
+- Builds using dockerhub `official` alpine image
+- Optional: includes https://github.com/pypiserver/pypiserver to run as local repo
 - Offers multiple methods for installing awscli on alpine containers
-- No root requirement
-- Installs into venv
+- No root requirement for awscli install
+- Flexible, pythonic module install: user, venv, pipx
 
 ## Installation Requirements
 On Alpine Linux, in a container, VM, bare metal, one needs:
