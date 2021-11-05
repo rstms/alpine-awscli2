@@ -102,6 +102,11 @@ for any of its dependencies despite what many have written.  With proper system
 configuration, unmodified AWS sources build and install without issue using
 just the standard Python tools on Alpine.
 
+For our uses, the software seems to be performing correctly.  As time permits, we 
+intend to utilize the test suite to verify complete functionality of the
+program.  Careful study is required to determine if any tests make use of private
+AWS resources. (Help would be welcome here!)
+
 The dockerhub image provides a minimal configuration single command installation.
 This workaround respects the PyPi license terms, which disallow distribution of
 unmodified clones of a project's packages when the owner has chosen not to publish
